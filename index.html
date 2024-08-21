@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium NMCN CBT Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .login-form, .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .login-form input, .login-form button {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .login-form button {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #004d40;
+        }
+        .login-header {
+            margin-bottom: 20px;
+        }
+        .login-header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #004d40;
+        }
+        .login-header h2 {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #00796b;
+        }
+        .main-content {
+            display: none;
+        }
+        .main-content iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="loginForm" class="login-form">
+            <div class="login-header">
+                <h1>PREMIUM NMCN CBT LOGIN</h1>
+                <h2>Academic Nightingale</h2>
+            </div>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- Main Content -->
+        <div id="mainContent" class="main-content">
+            <h1>Welcome to Academic Nightingale!</h1>
+            <p>This is the section for nursing and midwifery students to access materials for their academic success.</p>
+            <!-- Embed Microsoft Form here -->
+            <iframe src="https://forms.office.com/your-form-url" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var validPasswords = [
+                'Premium1', 'Premium50', 'Premium20', 'Premium30', 
+                'Premium40', 'Premium60', 'Premium70', 'Premium80', 
+                'Premium90', 'Cbt member1'
+            ];
+            
+            if (username.length > 3 && validPasswords.includes(password)) {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+            } else {
+                alert('Invalid username or password');
+            }
+        }
+    </script>
+</body>
+</html>
